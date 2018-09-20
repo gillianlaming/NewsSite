@@ -100,9 +100,9 @@
             
             if (password_verify($pass, $hash)){ // if the password matches the hash
                 // successful login
-                echo "yay ".$name.", you're logged in!";
+                header("Location: ../theturnip.php");
             } else { // if password wrong
-                echo "<br>incorrect password.";
+                echo "<br>incorrect password.<br>";
                 echo "<a href=../newslogin.html>Try Again or Register for an Account</a>";
             }
         } else { // if username wrong
