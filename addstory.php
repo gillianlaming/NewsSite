@@ -13,10 +13,10 @@
 	<!--give story a title-->
 	<form name="form" action="" method="post">
 		Title:
-		<input type="text" name="title" id="title">
-		Story:
-		<input type="text" name="newstory" id="newstory">
-		
+		<input type="text" name="title" id="title"></br> 
+		Story: 
+		<input type="text" name="newstory" style="height:500px;font-size: 12pt">
+		</br>
 		<input type="submit" name="add_story" value="Add Story">
 	</form>
 	
@@ -25,9 +25,8 @@
 	
 	if(isset($_POST['add_story'])){ /*i do not think this is the right command*/
 	
-		session_start();
 		//obtain user so that sotry can be credited to them
-		$name = $_SESSION['name'];
+		$name = 'leela';
 		$title = $_POST['title'];
 		$newstory = $_POST['newstory'];
 		//$_POST["name"]; /*gets username*/
