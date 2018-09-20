@@ -12,9 +12,10 @@ body{
 
 h2{
     text-align: left;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 20px;
-    color: #350435;
+    color: #ae184f;
+    font-size: 35px;
 }
 
 h4{
@@ -46,8 +47,9 @@ input:hover{
 }
 
 #stories{
+    text-align: left;
     list-style: none;
     padding: 0;
-    margin-right: 20%;
+    margin-right: 10%;
     margin-left: 10%;
 }

@@ -11,9 +11,9 @@
         <h1>THE TURNIP</h1>
         <p>america's favorite news source for all things fucked up &amp; funky</p>
         
-        <h2>Stories! </h2>
+        <h2>Recent Stories: </h2>
         <br>
-        <?php
+        <?php // display stories
             require 'database.php';
             $see_story = $mysqli->prepare("select title, body, author from stories order by id");
             if(!$see_story){
@@ -34,6 +34,14 @@
             
             $see_story->close();
             $mysqli->close();
+            
+            session_start(); 
+            
+            
+            if (isset($_SESSION['name'])){
+                $name = $_SESSION['name'];
+                echo "hi " . $name;
+            }
         ?>
-        
+        <br><br><br>
     </body>

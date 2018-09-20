@@ -100,6 +100,8 @@
             
             if (password_verify($pass, $hash)){ // if the password matches the hash
                 // successful login
+                session_start();
+                $_SESSION['name'] = $name;
                 header("Location: ../theturnip.php");
             } else { // if password wrong
                 echo "<br>incorrect password.<br>";
