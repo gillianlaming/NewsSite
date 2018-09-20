@@ -12,7 +12,7 @@
         <p>america's favorite news source for all things fucked up &amp; funky</p>
         
         <h2>Recent Stories: </h2>
-        <br>
+
         <?php // display stories
             require 'database.php';
             $see_story = $mysqli->prepare("select id, title, body, story_date, author from stories order by id");
@@ -39,10 +39,14 @@
 
             if (isset($_SESSION['name'])){
                 $name = $_SESSION['name'];
-                echo "hi " . $name;
-                echo '<br><a href="logout.php">Logout</a><br>';
                 
-                echo '<a href="addstory.php">Add Story</a>';
+            ?>
+            <div class="menu">
+               <h3>hi <?php echo $name ?></h3>
+                <a href="logout.php">Logout</a><br><br>
+                <a href="addstory.php">Add Story</a>
+            </div>
+            <?php
             }
         ?>
         <br><br><br>

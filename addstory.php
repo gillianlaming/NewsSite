@@ -47,7 +47,8 @@
 			$add_story->execute();
 			$add_story->close();
 			
-			echo "good news! your story has been posted!";
+			// story has been posted, return home
+			header('Location: ../theturnip.php');
 		}
 	}
 	else {
