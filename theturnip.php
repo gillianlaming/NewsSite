@@ -15,19 +15,19 @@
         <br>
         <?php // display stories
             require 'database.php';
-            $see_story = $mysqli->prepare("select id, title, body, author from stories order by id");
+            $see_story = $mysqli->prepare("select id, title, body, story_date, author from stories order by id");
             if(!$see_story){
                 printf("Query Prep Failed: %s\n", $mysqli->error);
                 exit;
             }
             
             $see_story->execute();
-            $see_story->bind_result($story_id, $title, $body, $author);
+            $see_story->bind_result($story_id, $title, $body, $date, $author);
             
             echo "<ul id='stories'>\n";
             while($see_story->fetch()){
                 echo "<li><h4><a href='".$title."+".$story_id."'>".$title."</a>";
-                echo " <i> by ".$author."</i></h4><br>";
+                echo " <i> by ".$author."</i></h4> <h6>".$date."</h6>";
                 echo $body. "<br><br><hr></li>";
             }
             echo "</ul>";

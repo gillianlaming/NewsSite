@@ -8,14 +8,13 @@
 		<link rel="stylesheet" href="../turnip.css">
 	</head>
 	<body>
+		<br>
 		<h1>Add a Story</h1>
 	
 	<!--give story a title-->
 	<form name="form" action="" method="post">
-		Title:
-		<input type="text" name="title" id="title"></br> 
-		Story: 
-		<input type="text" name="newstory" style="height:500px;font-size: 12pt">
+		<input type="text" name="title" id="title" placeholder="title"></br> 
+		<input type="text" name="newstory" id="newstory"  placeholder="tell us something interesting">
 		</br>
 		<input type="submit" name="add_story" value="Add Story">
 	</form>
@@ -25,11 +24,12 @@
 	
 	if(isset($_POST['add_story'])){ /*i do not think this is the right command*/
 	
-		//obtain user so that sotry can be credited to them
-		$name = 'leela';
+		session_start();
+		//obtain user so that story can be credited to them
+		$name = $_SESSION['name'];
 		$title = $_POST['title'];
 		$newstory = $_POST['newstory'];
-		//$_POST["name"]; /*gets username*/
+
 		$add_story = $mysqli->prepare("insert into stories (title, body, author) values(?, ?, ?)");
 		if(!$add_story){
 			printf("Query Prep Failed: %s\n", $mysqli->error);
