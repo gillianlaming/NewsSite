@@ -41,6 +41,10 @@ p{
 	margin-left: calc(50% - 240px);
 	border: 1px #000 solid;
 }
+#textbox{
+	height:500px;
+    font-size:14pt;
+}
 
 input:hover{
 	cursor: pointer;
