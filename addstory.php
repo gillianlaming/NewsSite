@@ -11,9 +11,12 @@
 		<h1>Add a Story</h1>
 	
 	<!--give story a title-->
-	<form name="form" action="submit" method="post">
-		<input type="text" name="title" id="title" value="Title">
-		<input type="text" name="newstory" id="newstory" value="Add Story here">
+	<form name="form" action="" method="post">
+		Title:
+		<input type="text" name="title" id="title">
+		Story:
+		<input type="text" name="newstory" id="newstory">
+		
 		<input type="submit" name="add_story" value="Add Story">
 	</form>
 	
@@ -24,6 +27,8 @@
 	
 		//obtain user so that sotry can be credited to them
 		$name = 'leela';
+		$title = $_POST['title'];
+		$newstory = $_POST['newstory'];
 		//$_POST["name"]; /*gets username*/
 		$add_story = $mysqli->prepare("insert into stories (title, body, author) values(?, ?, ?)");
 		if(!$add_story){
@@ -36,15 +41,11 @@
 		$add_story->close();
 		
 		echo "good news! your story has been posted!";
-		echo "<a href=../theturnip.php>Home</a>";
 	}
 		//echo "<p style=\"width: 50%; margin-left: 25%;\"> <br>"; //styling
 	?>
-
-	<!--return back to turnip homepage-->
-	 <form action="../theturnip.php"> 
-    		<input type="button" onclick="location='../theturnip.php/<?php echo $enc ?>'" value="Return Home"><br>
-    </form>
+	<br>
+	<a href="../theturnip.php">Home</a>
 	</body>
 
 </html>
