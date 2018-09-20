@@ -22,8 +22,9 @@
 	
 	if(isset($_POST['add_comment'])){ 
 	
-		//obtain user so that sotry can be credited to them
-		$name = 'leela';
+		session_start();
+		//obtain user so that comment can be credited to them
+		$name = $_SESSION['name'];
 		$storyid = '1';
 		$comment = $_POST['comment'];
 		//$_POST["name"]; /*gets username*/
