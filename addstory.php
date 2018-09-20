@@ -25,8 +25,9 @@
 	
 	if(isset($_POST['add_story'])){ /*i do not think this is the right command*/
 	
+		session_start();
 		//obtain user so that sotry can be credited to them
-		$name = 'leela';
+		$name = $_SESSION['name'];
 		$title = $_POST['title'];
 		$newstory = $_POST['newstory'];
 		//$_POST["name"]; /*gets username*/
