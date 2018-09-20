@@ -58,6 +58,12 @@ input:hover{
     margin-left: 10%;
 }
 
+#title{
+    text-align: left;
+    width: 50%;
+    PADDING: 0;
+}
+
 #newstory{
     padding: 0 0 400px 0;
     width: 50%;

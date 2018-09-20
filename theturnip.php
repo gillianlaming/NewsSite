@@ -40,7 +40,8 @@
             if (isset($_SESSION['name'])){
                 $name = $_SESSION['name'];
                 echo "hi " . $name;
-                echo '<br><a href="../newslogin.html">Logout</a><br>';
+                echo '<br><a href="logout.php">Logout</a><br>';
+                
                 echo '<a href="addstory.php">Add Story</a>';
             }
         ?>
