@@ -36,9 +36,8 @@
 			//obtain user so that story can be credited to them
 			$title = $_POST['title'];
 			$newstory = $_POST['newstory'];
-
-			$url = '/' . $title . '.html'; // story url will be title.html
-
+			
+			$url = '/' . $title .'+'. $name . '.php'; // story url will be title+author.php
 	
 			$add_story = $mysqli->prepare("insert into stories (title, body, author, url_id) values(?, ?, ?, ?)");
 			if(!$add_story){
@@ -50,13 +49,15 @@
 			$add_story->execute();
 			$add_story->close();
 			
-
-			$story_page= $mysqli->prepare("select body from stories into outfile 'var/www/html/uploads/?' where url_id = ?");
-			$story_page->bind_param('ss', $url, $url);
-			$story_page->execute();
-			$story_page->close();
+			// TRYING TO ADD TO INSTANCE BUT DOESN'T WORK SO COMMENTED OUT RN
+			
+			// $story_page= $mysqli->prepare("select body from stories into outfile 'var/www/html/uploads/?' where url_id = ?");
+			// $story_page->bind_param('ss', $url, $url);
+			// $story_page->execute();
+			// $story_page->close();
+			
+			
 			// story has been posted, return home
-
 			header('Location: ../theturnip.php');
 		}
 	}
