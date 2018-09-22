@@ -32,6 +32,9 @@
             }
             echo "</ul>";
             
+            $see_story->close();
+            $mysqli->close();
+            
             session_start(); 
 
             if (isset($_SESSION['name'])){
