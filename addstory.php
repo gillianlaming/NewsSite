@@ -36,18 +36,27 @@
 			//obtain user so that story can be credited to them
 			$title = $_POST['title'];
 			$newstory = $_POST['newstory'];
-			
+
+			$url = '/' . $title . '.html'; // story url will be title.html
+
 	
-			$add_story = $mysqli->prepare("insert into stories (title, body, author) values(?, ?, ?)");
+			$add_story = $mysqli->prepare("insert into stories (title, body, author, url_id) values(?, ?, ?, ?)");
 			if(!$add_story){
 				printf("Query Prep Failed: %s\n", $mysqli->error);
 				exit;
 			}
-			
-			$add_story->bind_param('sss', $title, $newstory, $name); /*adds the title, body, and author*/
+
+			$add_story->bind_param('ssss', $title, $newstory, $name, $url); /*adds the title, body, author, & url*/
 			$add_story->execute();
 			$add_story->close();
 			
+
+			$story_page= $mysqli->prepare("select body from stories into outfile 'var/www/html/uploads/?' where url_id = ?");
+			$story_page->bind_param('ss', $url, $url);
+			$story_page->execute();
+			$story_page->close();
+			// story has been posted, return home
+
 			header('Location: ../theturnip.php');
 		}
 	}
