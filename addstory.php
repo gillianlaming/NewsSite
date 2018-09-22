@@ -36,6 +36,7 @@
 			//obtain user so that story can be credited to them
 			$title = $_POST['title'];
 			$newstory = $_POST['newstory'];
+			
 	
 			$add_story = $mysqli->prepare("insert into stories (title, body, author) values(?, ?, ?)");
 			if(!$add_story){
@@ -47,7 +48,6 @@
 			$add_story->execute();
 			$add_story->close();
 			
-			// story has been posted, return home
 			header('Location: ../theturnip.php');
 		}
 	}

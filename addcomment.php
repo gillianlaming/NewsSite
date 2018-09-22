@@ -27,7 +27,6 @@
 		$name = $_SESSION['name'];
 		$storyid = '1';
 		$comment = $_POST['comment'];
-		//$_POST["name"]; /*gets username*/
 		$add_comment = $mysqli->prepare("insert into stories (user, comment, story_id) values(?, ?, ?)");
 		if(!$add_comment){
 			printf("Query Prep Failed: %s\n", $mysqli->error);
