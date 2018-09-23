@@ -45,6 +45,7 @@
                <h3>hi <?php echo $name ?></h3>
                 <a href="logout.php">Logout</a><br><br>
                 <a href="addstory.php">Add Story</a>
+                <a href="storypage.php">View Story</a>
             </div>
             <?php
             }

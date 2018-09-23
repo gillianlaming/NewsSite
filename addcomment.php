@@ -1,4 +1,4 @@
-!DOCTYPE HTML
+<!DOCTYPE HTML>
 <html lang="en">
 	<head>
 		<!--add a comment to a story in the turnip-->
@@ -10,24 +10,26 @@
 	<body>
 		<h1>Add a Comment</h1>
 	
-	<!--give story a title-->
+	<!--add comment-->
 	<form name="form" action="" method="post">
 		Comment:
-		<input type="text" name="comment" id="comment">
+		<input type="text" name="comment" id="comment" placeholder="add comment here"
+		</br>
 		<input type="submit" name="add_comment" value="Add Comment">
 	</form>
 	
 	<?php
 	require 'database.php';
+	//right now, theres is an error saying that before comment is typed in, undefined index. this should not be shwoing
 	
 	if(isset($_POST['add_comment'])){ 
 	
 		session_start();
 		//obtain user so that comment can be credited to them
 		$name = $_SESSION['name'];
-		$storyid = '1';
+		$storyid = '1'; /*this will need to be changed*/
 		$comment = $_POST['comment'];
-		$add_comment = $mysqli->prepare("insert into stories (user, comment, story_id) values(?, ?, ?)");
+		$add_comment = $mysqli->prepare("insert into comments (user, comment, story_id) values(?, ?, ?)");
 		if(!$add_comment){
 			printf("Query Prep Failed: %s\n", $mysqli->error);
 			exit;
@@ -37,12 +39,12 @@
 		$add_comment->execute();
 		$add_comment->close();
 		
-		echo "good news! your comment has been posted!";
+		echo "</br> good news! your comment has been posted!";
 	}
 		
 	?>
 	<br>
-	<a href="../theturnip.php">Home</a>
+	<a href="../storypage.php">Back</a>
 	</body>
 
 </html>
