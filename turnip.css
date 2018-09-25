@@ -110,3 +110,36 @@ input:hover{
     transition-duration: 400ms;
     border-radius: 3px;
 }
+
+#icon{
+    position: absolute;
+    height: 70px;
+    cursor: pointer;
+    top: 20px;
+    left: 5%;
+}
+
+#addform{
+    text-align: left;
+    margin-left: 5%;
+    color: #ae184f;
+}
+
+#label{
+    font-size: 20px;
+    width: 133px;
+}
+
+#comments {
+    list-style: none;
+    font-size: 16px;
+    text-align: left;
+    margin-left: 5%;
+}
+
+#story_body{
+    width: 80%;
+    margin-left: 10%;
+    text-align: left;
+    line-height: 25px;
+}

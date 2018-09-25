@@ -20,14 +20,14 @@
 	
 	<?php
 	require 'database.php';
-	//right now, theres is an error saying that before comment is typed in, undefined index. this should not be shwoing
-	
+
+	$story_id = $_POST['story_id'];
+			
 	if(isset($_POST['add_comment'])){ 
 	
 		session_start();
 		//obtain user so that comment can be credited to them
 		$name = $_SESSION['name'];
-		$storyid = '1'; /*this will need to be changed*/
 		$comment = $_POST['comment'];
 		$add_comment = $mysqli->prepare("insert into comments (user, comment, story_id) values(?, ?, ?)");
 		if(!$add_comment){
@@ -35,7 +35,7 @@
 			exit;
 		}
 		
-		$add_comment->bind_param('ssi', $name, $comment, $storyid); /*adds the title, body, and author*/
+		$add_comment->bind_param('ssi', $name, $comment, $story_id); /*adds the author, comment, and id*/
 		$add_comment->execute();
 		$add_comment->close();
 		
