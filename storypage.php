@@ -93,6 +93,7 @@
 				<!--delete comment from databse-->
 				<form action="../delete_comment.php" method="post">
 					<input type="submit" name="delete_comment" value="Delete">
+					<input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
 				</form>
 				<form action="../edit_comment.php" method="post">
 					<input type="submit" name="edit_comment" value="Edit">
