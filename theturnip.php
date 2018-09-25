@@ -15,6 +15,7 @@
 
         <?php // display stories
             require 'database.php';
+            session_start();
             $see_story = $mysqli->prepare("select id, title, body, story_date, author, url_id from stories order by id");
             if(!$see_story){
                 printf("Query Prep Failed: %s\n", $mysqli->error);
@@ -35,9 +36,8 @@
             $see_story->close();
             $mysqli->close();
             
-            session_start(); 
 
-            if (isset($_SESSION['name'])){
+            if (isset($_SESSION['name'])){ // if logged in, show options
                 $name = $_SESSION['name'];
                 
             ?>
@@ -45,8 +45,11 @@
                <h3>hi <?php echo $name ?></h3>
                 <a href="logout.php">Logout</a><br><br>
                 <a href="addstory.php">Add Story</a>
-                <a href="storypage.php">View Story</a>
             </div>
+            <?php // if not logged in, only show login option
+            } else { ?>
+                <div class="menu">
+                <a href="newslogin.html">Login</a>
             <?php
             }
         ?>
