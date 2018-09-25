@@ -91,10 +91,10 @@
 			if (strcmp($user, $name) == 0){
 				?>
 				<!--delete comment from databse-->
-				<form action="delete_comment.php" method="post">
+				<form action="../delete_comment.php" method="post">
 					<input type="submit" name="delete_comment" value="Delete">
 				</form>
-				<form action="" method="post">
+				<form action="../edit_comment.php" method="post">
 					<input type="submit" name="edit_comment" value="Edit">
 				</form><br></li>
 				
@@ -107,7 +107,7 @@
 		$mysqli->close();
 		
 	} else {
-		echo '<div class="menu"><a href="newslogin.html">Login</a>';
+		echo '<div class="menu"><a href="../newslogin.html">Login</a>';
 	}
 ?>
 
