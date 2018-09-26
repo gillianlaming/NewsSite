@@ -13,36 +13,17 @@
         <p>america's favorite news source for all things fucked up &amp; funky</p>
         <html>
         
-        <form action="search_page.php" method="post">
+        <form action="" method="post">
         <input id="search" name="search" type="text" placeholder="Search stories">
         <input id="submit_search" name="submit_search" type="submit" value="Search">
         </form>
       
        
-        <h2>Recent Stories</h2>
+        <h2>Search Results</h2>
 
         <?php // display stories
             require 'database.php';
             session_start();
-            $see_story = $mysqli->prepare("select id, title, body, story_date, author, url_id from stories order by id");
-            if(!$see_story){
-                printf("Query Prep Failed: %s\n", $mysqli->error);
-                exit;
-            }
-            
-            $see_story->execute();
-            $see_story->bind_result($story_id, $title, $body, $date, $author, $url);
-            
-            echo "<ul id='stories'>\n";
-            while($see_story->fetch()){
-                echo "<li><h4><a href='".$url."'>".$title."</a>";
-                echo " <i> by ".$author."</i></h4> <h6>".$date."</h6>";
-                echo $body. "<br><br><hr></li>";
-            }
-            echo "</ul>";
-            
-            $see_story->close();
-           // $mysqli->close();
             
             if (isset($_POST['submit_search'])){
               $find_story = $_POST['search'];
@@ -58,9 +39,9 @@
                 
                 //echo "<ul id='search results'>\n";
                 while($search->fetch()){
-                        echo "<li><h4><a href='".$url."'>".$title."</a>";
-                        echo " <i> by ".$author."</i></h4>";
-                        echo $body. "<br><br><hr></li>";
+                        echo "<a href='".$url."'> title: ".$title."</a>";
+                        echo "by ".$author."";
+                        echo "this is the body" .$body. "<br><br>";
                     }  
                 $search->close();
             }
