@@ -109,8 +109,26 @@
 		$see_comment->close();
 		$mysqli->close();
 		
+		
+		// if logged in as author of this story
+		if (strcmp($author, $name) == 0){
+			?>
+				<div class="menu">
+					<h3>hi <?php echo $name ?>, you are the author of this story</h3>
+					<form action="../delete_story.php" method="post">
+						<input type="submit" name="delete_story" value="Delete Story">
+						<input type="hidden" name="story_id" value="<?php echo $story_id ?>">
+					</form>
+					<form action="../edit_story.php" method="post">
+						<input type="submit" name="edit_story" value="Edit Story">
+						<input type="hidden" name="story_id" value="<?php echo $story_id ?>">
+						<input type="hidden" name="body" value="<?php echo $body ?>">
+					</form>
+				</div>
+			<?php
+		}
 	} else {
-		echo '<div class="menu"><a href="../newslogin.html">Login</a>';
+		echo '<div class="menu"><a href="../newslogin.html">Login</a></div>';
 	}
 ?>
 
