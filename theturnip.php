@@ -6,11 +6,19 @@
         <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <link rel="stylesheet" href="../turnip.css">
     </head>
+    
     <body>
         <img src="../turnip.jpg" alt="turnip" width="25%">
         <h1>THE TURNIP</h1>
         <p>america's favorite news source for all things fucked up &amp; funky</p>
+        <html>
         
+        <form action="" method="post">
+        <input id="search" name="search" type="text" placeholder="Search stories">
+        <input id="submit_search" name="submit_search" type="submit" value="Search">
+        </form>
+      
+       
         <h2>Recent Stories</h2>
 
         <?php // display stories
@@ -34,12 +42,34 @@
             echo "</ul>";
             
             $see_story->close();
-            $mysqli->close();
+           // $mysqli->close();
+            
+            if (isset($_POST['submit_search'])){
+              $find_story = $_POST['search'];
+              $search = $mysqli->prepare("select title, body, author, url_id from stories where title = ?");
+                        if(!$find_story){
+                          printf("Query Prep Failed: %s\n", $mysqli->error);
+                          exit;
+                          }
+                
+                $search->bind_param('s', $find_story);
+                $search->execute();
+                $search->bind_result($title, $body, $author, $url);
+                
+                //echo "<ul id='search results'>\n";
+                while($search->fetch()){
+                        echo "<li><h4><a href='".$url."'>".$title."</a>";
+                        echo " <i> by ".$author."</i></h4>";
+                        echo $body. "<br><br><hr></li>";
+                    }  
+                $search->close();
+            }
             
 
             if (isset($_SESSION['name'])){ // if logged in, show options
                 $name = $_SESSION['name'];
-                
+            
+            
             ?>
             <div class="menu">
                <h3>hi <?php echo $name ?></h3>
