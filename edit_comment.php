@@ -5,6 +5,8 @@
 	$url = $_POST['url'];
 	
 ?>
+<!DOCTYPE html>
+<html lang='en'></html>
 	<form action = "" method="post">
 		Comment: <input type="text" id="commentbox" name="new_comment" value="<?php echo $comment; ?>"/><br/>
 		<input type="submit" id="submit" name="submit" value="Submit">
@@ -32,4 +34,5 @@
 	}
 	
 ?>
+</html>
 	
