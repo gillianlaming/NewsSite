@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="../turnip.css">
 	</head>
 	<body>
-		<a href="../theturnip.php"><img src="../turnip.jpg" alt="turnip" id="icon"></a> 
+		<a href="../theturnip.php"><img src="../turniphome.jpeg" alt="turnip" id="icon"></a> 
 		<br>
 		
 	

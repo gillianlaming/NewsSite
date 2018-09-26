@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		
-		<a href="../theturnip.php"><img src="../turnip.jpg" alt="turnip" id="icon"></a> 
+		<a href="../theturnip.php"><img src="../turniphome.jpeg" alt="turnip" id="icon"></a> 
 		
 	<?php
 		require 'database.php';
