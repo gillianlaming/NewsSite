@@ -8,18 +8,9 @@
     </head>
     
     <body>
-        <img src="../turnip.jpg" alt="turnip" width="25%">
-        <h1>THE TURNIP</h1>
-        <p>america's favorite news source for all things fucked up &amp; funky</p>
-        <html>
-        
-        <form action="" method="post">
-        <input id="search" name="search" type="text" placeholder="Search stories">
-        <input id="submit_search" name="submit_search" type="submit" value="Search">
-        </form>
-      
-       
-        <h2>Search Results</h2>
+        <a href="../theturnip.php"><img src="../turniphome.jpeg" alt="turnip" id="icon"></a> 
+		<br><br><br><br><br>
+        <h2 id="search_results">Search Results</h2>
 
         <?php // display stories
             require 'database.php';
@@ -27,22 +18,25 @@
             
             if (isset($_POST['submit_search'])){
               $find_story = $_POST['search'];
-              $search = $mysqli->prepare("select title, body, author, url_id from stories where title = ?");
-                        if(!$find_story){
-                          printf("Query Prep Failed: %s\n", $mysqli->error);
-                          exit;
-                          }
+              $search = $mysqli->prepare("select title, body, author, url_id from stories where title like ?");
+                if(!$find_story){
+                  printf("Query Prep Failed: %s\n", $mysqli->error);
+                  exit;
+                }
+                $param = "%{$find_story}%";
                 
-                $search->bind_param('s', $find_story);
+                $search->bind_param('s', $param);
                 $search->execute();
                 $search->bind_result($title, $body, $author, $url);
                 
-                //echo "<ul id='search results'>\n";
+                echo "<ul id='stories'>\n";
+                echo "<br><p><strong>you searched for \"" . $find_story. "\"</strong><br>";
                 while($search->fetch()){
-                        echo "<a href='".$url."'> title: ".$title."</a>";
-                        echo "by ".$author."";
-                        echo "this is the body" .$body. "<br><br>";
-                    }  
+                        echo "<li><h4><a href='".$url."'> ".$title."</a>";
+                        echo " <i> by ".$author."</i></h4>";
+                        echo $body. "<br><br><hr></li>";
+                }
+                echo "</ul>";
                 $search->close();
             }
             

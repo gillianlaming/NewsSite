@@ -148,3 +148,7 @@ input:hover{
     width: 50%;
     line-height: 1em;
 }
+
+#search_results{
+    width: 255px;
+}
