@@ -55,8 +55,10 @@
             } else { ?>
                 <div class="menu">
                 <a href="newslogin.html">Login</a>
+                </div>
             <?php
             }
         ?>
         <br><br><br>
     </body>
+</html>
