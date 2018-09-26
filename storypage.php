@@ -99,6 +99,7 @@
 					<input type="submit" name="edit_comment" value="Edit">
 					<input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
 					<input type="hidden" name="comment" value="<?php echo $comment ?>">
+					<input type="hidden" name="url" value="<?php echo $url ?>">
 				</form><br></li>
 				
 				<?php
@@ -123,6 +124,7 @@
 						<input type="submit" name="edit_story" value="Edit Story">
 						<input type="hidden" name="story_id" value="<?php echo $story_id ?>">
 						<input type="hidden" name="body" value="<?php echo $body ?>">
+						<input type="hidden" name="url" value="<?php echo $url ?>">
 					</form>
 				</div>
 			<?php
