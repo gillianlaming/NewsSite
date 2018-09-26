@@ -166,3 +166,7 @@ input:hover{
 #comments li form{
     display: inline-block;
 }
+
+#comment{
+    width: 25%;
+}
