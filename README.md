@@ -8,7 +8,8 @@
 
 ### Link to Homepage of Instace ###
 
-* 
+* Link to Login Page: http://ec2-18-223-135-67.us-east-2.compute.amazonaws.com/newslogin.html
+* Link to Home Page: http://ec2-18-223-135-67.us-east-2.compute.amazonaws.com/theturnip.php 
 
 ### Creative Portion ###
 
