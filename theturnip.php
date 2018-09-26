@@ -14,7 +14,7 @@
         <html>
         
         <form action="search_page.php" method="post">
-        <input id="search" name="search" type="text" placeholder="Search stories">
+        <input id="search" name="search" type="text" placeholder="search stories by title">
         <input id="submit_search" name="submit_search" type="submit" value="Search">
         </form>
       
