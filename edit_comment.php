@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang='en'>
 <?php
 	require ('database.php');
 	$comment_id = $_POST['comment_id'];
