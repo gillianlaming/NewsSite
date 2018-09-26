@@ -162,3 +162,7 @@ input:hover{
 #search_results{
     width: 255px;
 }
+
+#comments li form{
+    display: inline-block;
+}
