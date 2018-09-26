@@ -97,6 +97,7 @@
 				</form>
 				<form action="../edit_comment.php" method="post">
 					<input type="submit" name="edit_comment" value="Edit">
+					<input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
 				</form><br></li>
 				
 				<?php

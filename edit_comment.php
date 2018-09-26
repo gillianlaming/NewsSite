@@ -9,16 +9,9 @@
 		<!--sos we need comment_id-->
 		<?php
 		require ('database.php');
-		$see_comment = $mysqli->prepare("select comment_id, story_id, user, comment, comment_date from comments order by comment_id");
-		if (!$see_comment){
-			printf("Query Prep Failed: %s\n", $mysqli->error);
-            exit;
-		}
-		$see_comment->execute();
-		$see_comment->bind_result($comment_id, $story_id, $user, $comment, $comment_date);
-		$see_comment->close();
+		$comment_id = $_POST['comment_id'];
 		?>
-
+		
 		<body>
 			<form action="" method="post">
 
@@ -28,9 +21,7 @@
 			
 			<p><strong>ID:</strong> <?php echo $comment_id; ?></p>
 			<!--comment box needs to be bigger-->
-			<strong>Comment: *</strong> <input type="text" name="firstname" value="<?php echo $comment; ?>"/><br/>
-			
-			<p>* Required</p>
+			<strong>Comment: </strong> <input type="text" name="firstname" value="<?php echo $comment; ?>"/><br/>
 			
 			<input type="submit" name="submit" value="Submit">
 			

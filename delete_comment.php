@@ -12,5 +12,7 @@ require 'database.php';
     $delete->execute(); 
     $delete->close();
     
-    header('Location: ' . $_SERVER['HTTP_REFERER']);
+    //header('Location: ' . $_SERVER['HTTP_REFERER']);
+    //go back to story? this will take u back home now
+    header('Location: ../theturnip.php');
 ?>
