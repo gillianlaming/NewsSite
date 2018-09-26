@@ -5,6 +5,7 @@
 	$url = $_POST['url'];
 	
 ?>
+
 	<head>
 		<meta charset="utf-8"/>
         <title>Edit Comment</title>
@@ -17,12 +18,13 @@
 		<br>
 		<form action = "" method="post">
 			<input type="text" id="commentbox" name="new_comment" value="<?php echo $comment; ?>"/><br/>
-			<input type="submit" id="submit" name="submit" value="Submit">
+			<input type="submit" id="submit" name="submit" value="Update">
 			<input type="hidden" name="comment_id" value="<?php echo $comment_id ?>">
 			<input type="hidden" name="comment" value="<?php echo $comment ?>">
 			<input type="hidden" name="url" value="<?php echo $url ?>">
 		</form>
 	</body>
+
 <?php
 
 	if (isset($_POST['submit'])){
@@ -43,4 +45,5 @@
 	}
 	
 ?>
+</html>
 	

@@ -11,7 +11,7 @@
 ?>
 
 
-<!DOCTYPE HTML
+<!DOCTYPE HTML>
 <html lang="en">
 	<head>
 		<!--add a story to the turnip-->
