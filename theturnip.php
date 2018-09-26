@@ -8,7 +8,7 @@
     </head>
     
     <body>
-        <img src="../turnip.jpg" alt="turnip" width="25%">
+        <img src="../turnip.jpg" alt="turnip" id="picture">
         <h1>THE TURNIP</h1>
         <p>america's favorite news source for all things fucked up &amp; funky</p>
         <html>
