@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang='en'>
 <?php
 require 'database.php';
 
@@ -23,3 +25,4 @@ require 'database.php';
     
    header('Location: ../theturnip.php');
 ?>
+</html>
