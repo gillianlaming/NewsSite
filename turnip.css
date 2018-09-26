@@ -143,3 +143,8 @@ input:hover{
     text-align: left;
     line-height: 25px;
 }
+#commentbox{
+	padding: 0 0 400px 0;
+    width: 50%;
+    line-height: 1em;
+}
