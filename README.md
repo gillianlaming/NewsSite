@@ -1,29 +1,16 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
 
-### What is this repository for? ###
+### Group Members ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+*Leela Ghaemmaghami ID: 457569
+*Gillian Laming: ID: 457507
 
-### How do I get set up? ###
+### Link to Homepage of Instace ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* 
 
-### Contribution guidelines ###
+### Creative Portion ###
 
-* Writing tests
-* Code review
-* Other guidelines
+For our creative portion, we added the ability to search our webpage for a specific story. The search bar is found on the homepage of our site. The user can either type in the complete title of a story, or a keyword found in a title, and the user will be directed to a page with all of the search results.
 
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
