@@ -8,10 +8,9 @@
     </head>
     
     <body>
-        <img src="../turnip.jpg" alt="turnip" width="25%">
+        <img src="../turnip.jpg" alt="turnip" id="picture">
         <h1>THE TURNIP</h1>
         <p>america's favorite news source for all things fucked up &amp; funky</p>
-        <html>
         
         <form action="search_page.php" method="post">
         <input id="search" name="search" type="text" placeholder="search stories by title">
@@ -80,8 +79,9 @@
             } else { ?>
                 <div class="menu">
                 <a href="newslogin.html">Login</a>
+                </div>
             <?php
             }
         ?>
         <br><br><br>
-    </body>
+        </body>
