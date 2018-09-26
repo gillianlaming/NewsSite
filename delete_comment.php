@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+    <html lang='en'>
 <?php
 require 'database.php';
 
@@ -14,3 +16,4 @@ require 'database.php';
     
     header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>
+    </html>
