@@ -19,9 +19,13 @@
 	3. click the small turnip to access the site without logging in
 		(note that you will only be allowed to visit the homepage)
 		
+	- if you don't want to make a new user, you can login as either:
+		- leela with password leela
+		- gillian with password gillian
+		
 - Once you have entered the site, you will see all the stories in the database
 	- click on the title of the story (in pink) to go to that story's induvidual page
-	- here, you can add comments and delete your comments
+	- here, you can add comments and delete or edit your comments
 	- if you are the author of the story, you can edit or delete it
 	
 - To add a story, click "add story"
