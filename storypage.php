@@ -1,6 +1,9 @@
 <?php
 	// get story title and author from url
 	$url = $_SERVER["REQUEST_URI"]; // get the current url path
+	if (strpos($url, "%20") == true){
+		$url= str_replace("%20"," ",$url);
+		}
 	$title_and_author = str_replace("/storypage.php/","",$url); // isolate the title and author
 	$plus = strpos($title_and_author, "+");
 	$title = substr($title_and_author, 0, $plus);
@@ -115,7 +118,7 @@
 		if (strcmp($author, $name) == 0){
 			?>
 				<div class="menu">
-					<h3>hi <?php echo $name ?>, you are the author of this story</h3>
+					<h3>hi <?php echo $name ?></h3>
 					<form action="../delete_story.php" method="post">
 						<input type="submit" name="delete_story" value="Delete Story">
 						<input type="hidden" name="story_id" value="<?php echo $story_id ?>">

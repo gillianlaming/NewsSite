@@ -38,8 +38,14 @@
 			$title = $_POST['title'];
 			$newstory = $_POST['newstory'];
 			
+			
 			$url = '/storypage.php/' . $title .'+'. $name; // story url will be title+author.php
-	
+			
+			//if (strpos($url, " ") == true){
+			//	//echo "hello";
+			//	$new_url= str_replace(" ","",$url);
+			//}
+			
 			$add_story = $mysqli->prepare("insert into stories (title, body, author, url_id) values(?, ?, ?, ?)");
 			if(!$add_story){
 				printf("Query Prep Failed: %s\n", $mysqli->error);
